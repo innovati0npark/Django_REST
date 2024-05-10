@@ -16,6 +16,7 @@ def product_list(request):
         data = json.loads(request.body)
         product = Product.objects.create(**data)
         return JsonResponse(serialize_product(product), status=201)
+    
 
 @csrf_exempt
 def product_detail(request, pk):
